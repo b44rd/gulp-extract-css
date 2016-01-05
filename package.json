@@ -1,0 +1,55 @@
+{
+  "name": "gulp-extract-css",
+  "description": "Extract styles starting with a given scope, and distribute to separate files",
+  "version": "0.0.7",
+  "homepage": "https://github.com/b44rd/gulp-extract-css",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/b44rd/gulp-extract-css.git"
+  },
+  "author": {
+    "name": "b44rd"
+  },
+  "main": "./index.js",
+  "keywords": [
+    "gulp plugin",
+    "postprocess css",
+    "extract css",
+    "css optimisation"
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "css-parse": "~1.7.0",
+    "lodash.defaults": "~2.4.1",
+    "through2": "~0.4.1",
+    "gulp-util": "~2.2.14"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/b44rd/gulp-extract-css/raw/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/b44rd/gulp-extract-css/issues"
+  },
+  "scripts": {},
+  "maintainers": [
+    {
+      "name": "b44rd",
+      "email": "web.oien@gmail.com"
+    }
+  ],
+  "directories": {},
+  "devDependencies": {
+    "fs": "0.0.2"
+  },
+  "readme": "# gulp-extract-css\n\nForked from [gulp-merge-media-queries](https://github.com/aivenreach/gulp-merge-media-queries).\n\n> Extract styles starting with a given scope, and distribute to separate files\n\n**This plugin has NOT been tested thoroughly.**\n\n## Install\n```\nnpm install gulp-extract-css --save-dev\n```\n\n## Usage\n```javascript\nvar ecss = require('gulp-extract-css');\n\ngulp.task('ecss', function () {\n  gulp.src('src/**/*.css')\n    .pipe(ecss({\n      log: true,\n      takeout: [\n        {\n            styleprefix: '.subtheme-something',\n            filename: 'subtheme-something.css'\n        },\n        {\n            styleprefix: '.ie9',\n            filename: 'outdated.css'\n        },\n      ]\n    }))\n    .pipe(gulp.dest('dist'));\n});\n```\n\n## Options\n\n### log\n\nType: `boolean` Default: `false`\n\nLog code blocks beeing extracted to files\n\n### takeout\n\nType: `array` Default: `[]`\n\nDefine the scope of rules to be extracted, and in which file to put the output\n\n## License\n\n(MIT License)\n\nCopyright (c) 2016 [b44rd](https://twitter.com/b44rd)\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "readmeFilename": "README.md",
+  "gitHead": "31b6819240ca3761bb5b759688b05c8b65b370ef",
+  "_id": "gulp-extract-css@0.0.4",
+  "_shasum": "335cc28041f3b347e1905c4988db3adbe940efe0",
+  "_from": "gulp-extract-css@*"
+}
